@@ -14,9 +14,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
-          // other vue-loader options go here
+          // vue-loader options go here
         }
       },
       {
@@ -35,15 +33,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue'
     }
   },
   devServer: {
     historyApiFallback: true,
     noInfo: true
-  },
-  performance: {
-    hints: false
   },
   devtool: '#eval-source-map'
 }
@@ -58,7 +53,6 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
       compress: {
         warnings: false
       }
